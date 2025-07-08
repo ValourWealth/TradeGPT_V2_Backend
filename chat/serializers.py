@@ -4,13 +4,14 @@ from .models import ChatSession, ChatMessage
 class ChatMessageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ChatMessage
-        fields = ['id', 'session', 'sender', 'content', 'created_at']
+        fields = ['id', 'session', 'role', 'content', 'created_at']
         read_only_fields = ['id', 'created_at', 'session']
 
     def validate(self, data):
-        if 'sender' not in data or 'content' not in data:
-            raise serializers.ValidationError("Both 'sender' and 'content' are required.")
+        if 'role' not in data or 'content' not in data:
+            raise serializers.ValidationError("Both 'role' and 'content' are required.")
         return data
+
 
 
 class ChatSessionSerializer(serializers.ModelSerializer):
