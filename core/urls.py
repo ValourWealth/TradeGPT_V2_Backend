@@ -36,7 +36,8 @@ urlpatterns = [
     
     
     # chat app ==========================================================
-    path("create-session/", CreateChatSessionView.as_view(), name="create-chat-session"),
+    path('api/sessions/', ChatSessionListCreateView.as_view(), name='chat-sessions'),
+    path('api/sessions/<uuid:session_id>/messages/', ChatMessageListCreateView.as_view(), name='chat-messages'),
     # ===================================================================
     
     
