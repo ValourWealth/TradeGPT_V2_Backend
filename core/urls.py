@@ -21,9 +21,25 @@ from main.views import *
 from main.views import DeepSeekChatView as DeepSeekChatStreamView
 from main.views import DirectChatAIView
 
+from accounts.views import SignupView, LoginView
+from chat.views import *
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    # accounts app url:=================================================
+    path('api/signup/', SignupView.as_view(), name='signup'),
+    path('api/login/', LoginView.as_view(), name='login'),
+    # ===================================================================
+    
+    
+    # chat app ==========================================================
+    path("create-session/", CreateChatSessionView.as_view(), name="create-chat-session"),
+    # ===================================================================
+    
+    
     path("api/chat/start/", StartChatSessionView.as_view()),
     path("api/chat/sessions/<uuid:session_id>/messages/", MessageListCreateView.as_view()),
     path("api/chat/user-sessions/", UserChatSessionsView.as_view()),
