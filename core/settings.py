@@ -185,7 +185,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://tradegptlatest.vercel.app",
     "https://backend-production-1e63.up.railway.app",
     "https://tradegptbackend-production.up.railway.app",
-    
+    "https://tradegpt.valourwealth.com",
     "https://tradegptv2backend-production.up.railway.app",
     "https://latestnewtradegptversion.vercel.app",
 
